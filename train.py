@@ -42,7 +42,7 @@ for epoch in range(n_epochs):
 
         # forward + backward + optimize
         print(a, type(a))
-        loss = - math.log(p_a[a]) - math.log(p_b_a[a, b])
+        loss = - torch.log(p_a[a]) - torch.log(p_b_a[a, b])
 
         # outputs = net(inputs)
         # loss = criterion(outputs, labels)
