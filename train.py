@@ -41,7 +41,7 @@ for epoch in range(n_epochs):
         # optimizer.zero_grad()
 
         # forward + backward + optimize
-        loss = - torch.log(torch.nn.Softmax(p_a[a])) #- torch.log(torch.nn.Softmax(p_b_a[a, b]))
+        loss = - torch.log(torch.nn.Softmax(p_a)[a]) #- torch.log(torch.nn.Softmax(p_b_a[a, b]))
 
         # outputs = net(inputs)
         # loss = criterion(outputs, labels)
