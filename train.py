@@ -10,8 +10,7 @@ n_samples=100000
 true_p_a = np.random.random(N)
 true_p_a /= np.sum(true_p_a)
 true_p_b_a = np.random.random((N, N))
-true_p_b_a /= np.sum(true_p_b_a, axis=1)
-
+true_p_b_a /= np.sum(true_p_b_a, axis=1, keepdims=True)
 
 # model parameters
 p_a = torch.randn(N) / math.sqrt(N)
