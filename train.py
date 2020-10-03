@@ -51,9 +51,9 @@ for epoch in range(n_epochs):
         loss.backward()
         with torch.no_grad():
             p_a -= p_a.grad * lr
-            p_b_a -= p_b_a.grad * lr
+            # p_b_a -= p_b_a.grad * lr
             p_a.grad.zero_()
-            p_b_a.grad.zero_()
+            # p_b_a.grad.zero_()
 
         # # print statistics
         # running_loss += loss.item()
