@@ -41,7 +41,7 @@ for epoch in range(n_epochs):
         # optimizer.zero_grad()
 
         # forward + backward + optimize
-
+        print(a, type(a))
         loss = - math.log(p_a[a]) - math.log(p_b_a[a, b])
 
         # outputs = net(inputs)
