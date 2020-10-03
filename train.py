@@ -61,8 +61,8 @@ for epoch in range(n_epochs):
         #     print('[%d, %5d] loss: %.3f' %
         #           (epoch + 1, i + 1, running_loss / 2000))
         #     running_loss = 0.0
-        print(f"True p_a {true_p_a} {p_a}")
-        # print(f"True p_b_a {true_p_b_a} {p_b_a}")
+    print(f"True p_a {true_p_a} {p_a}")
+    # print(f"True p_b_a {true_p_b_a} {p_b_a}")
 
 print('Finished Training')
 print(f"True p_a {true_p_a} {p_a}")
