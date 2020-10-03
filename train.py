@@ -33,7 +33,7 @@ for epoch in range(n_epochs):
 
     running_loss = 0.0
     for i in range(n_samples):
-        print(f"iter {i}")
+        # print(f"iter {i}")
         a = np.random.choice(N, 1, p=true_p_a)[0]
         b = np.random.choice(N, 1, p=true_p_b_a[a])[0]
 
@@ -41,7 +41,6 @@ for epoch in range(n_epochs):
         # optimizer.zero_grad()
 
         # forward + backward + optimize
-        print(a, type(a))
         loss = - torch.log(p_a[a]) - torch.log(p_b_a[a, b])
 
         # outputs = net(inputs)
@@ -62,6 +61,8 @@ for epoch in range(n_epochs):
         #     print('[%d, %5d] loss: %.3f' %
         #           (epoch + 1, i + 1, running_loss / 2000))
         #     running_loss = 0.0
+        print(f"True p_a {true_p_a} {p_a}")
+        print(f"True p_b_a {true_p_b_a} {p_b_a}")
 
 print('Finished Training')
 print(f"True p_a {true_p_a} {p_a}")
