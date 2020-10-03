@@ -41,7 +41,7 @@ for epoch in range(n_epochs):
         # optimizer.zero_grad()
 
         # forward + backward + optimize
-        loss = - torch.log(p_a[a]) #- torch.log(p_b_a[a, b])
+        loss = - torch.log(torch.nn.Softmax(p_a[a])) #- torch.log(torch.nn.Softmax(p_b_a[a, b]))
 
         # outputs = net(inputs)
         # loss = criterion(outputs, labels)
@@ -61,7 +61,7 @@ for epoch in range(n_epochs):
         #     print('[%d, %5d] loss: %.3f' %
         #           (epoch + 1, i + 1, running_loss / 2000))
         #     running_loss = 0.0
-    print(f"True p_a {true_p_a} {p_a}")
+    print(f"True p_a {true_p_a} {torch.nn.Softmax(p_a)}")
     # print(f"True p_b_a {true_p_b_a} {p_b_a}")
 
 print('Finished Training')
