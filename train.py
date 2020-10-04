@@ -1,6 +1,16 @@
 import math
 import torch
 import numpy as np
+# from torch import nn
+#
+# class Mnist_Logistic(nn.Module):
+#     def __init__(self):
+#         super().__init__()
+#         self.weights = nn.Parameter(torch.randn(784, 10) / math.sqrt(784))
+#         self.bias = nn.Parameter(torch.zeros(10))
+#
+#     def forward(self, xb):
+#         return xb @ self.weights + self.bias
 
 N=10
 n_epochs=10
@@ -28,13 +38,14 @@ p_b_a.requires_grad_()
 # + parameter de structure gamma
 
 lr = 0.0001
+b_size = 10
 for epoch in range(n_epochs):
     print(f"Epoch {epoch}")
 
     running_loss = 0.0
     for i in range(n_samples):
         # print(f"iter {i}")
-        a = np.random.choice(N, 1, p=true_p_a)[0]
+        a = np.random.choice(N, b_size, p=true_p_a)[0]
         b = np.random.choice(N, 1, p=true_p_b_a[a])[0]
 
         # # zero the parameter gradients
