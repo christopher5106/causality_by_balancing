@@ -28,7 +28,7 @@ p_a_b.requires_grad_()
 # + parameter de structure gamma
 
 
-optimizer = optim.Adam([p_a, p_b_a, p_b, p_a_b], lr=0.001)
+optimizer = optim.Adam([p_a, p_b_a, p_b, p_a_b], lr=0.0001)
 b_size = 30
 n_iters = 100000
 running_loss = 0.0
@@ -83,7 +83,7 @@ print("\nEval by balanced cross entropy")
 for _ in range(n_weight_sampling):
     true_p_a = np.random.random(N)
     true_p_a /= np.sum(true_p_a)
-    weights_a = [1]*N # torch.rand(N)
+    weights_a = torch.ones(N) # torch.rand(N)
     # weights_a /= torch.sum(weights_a)
     #
     # weights_b = np.random.random(N)
